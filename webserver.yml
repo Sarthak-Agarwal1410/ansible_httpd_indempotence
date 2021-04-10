@@ -1,0 +1,21 @@
+- hosts: all
+  tasks:
+
+  - package:
+      name: "httpd"
+
+  - copy:
+      name: "copying the content in default file"
+      dest: "/var/www/html/index.html"
+      content: "This webserver is to make HTTPD idempotence in nature"
+
+  - template:
+     dest: "/etc/httpd/conf.d/lw.conf"
+     src: "lw.conf"
+    notify: "web services are starting as they were not running"
+
+  handlers:
+  - name: "web services are starting as they were not running"
+    service:
+       name: "httpd"
+       state: restarted
