@@ -1,4 +1,4 @@
-# ansible_httpd_indempotence
+# ansible_httpd_idempotent
 
 #Restarting HTTPD Service is not idempotence in nature 
 #And also consume more resources 
