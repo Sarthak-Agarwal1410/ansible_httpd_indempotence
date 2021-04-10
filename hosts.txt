@@ -1,0 +1,1 @@
+192.168.43.159 ansible_user=root ansible_ssh_pass=sarthak ansible_connection=ssh
